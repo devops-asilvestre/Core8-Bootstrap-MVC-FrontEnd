@@ -1,4 +1,5 @@
-﻿version: '3.8'
+﻿#  docker container run --rm --network=host -e SONAR_HOST_URL="http://localhost:9000" -v "./src:/urs/src" sonarsource/sonar-scanner-cli -Dsonar.projectKey=Manager.UI -Dsonar.sources=. -Dsonar.host.url=http://localhost:9000 -Dsonar.login=sqp_7e334834c4c009c7b7eb48e9a59f20330f8920ab
+version: '3.8'
 
 services:
   sonarqube:
