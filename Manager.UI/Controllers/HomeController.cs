@@ -15,6 +15,7 @@ namespace Manager.UI.Controllers
 
         public IActionResult Index()
         {
+            var _saida = "action index";
             return View();
         }
 
