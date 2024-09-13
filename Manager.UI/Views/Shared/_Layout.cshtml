@@ -23,11 +23,43 @@
                             <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Features">Cadastros</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Pricing">Pedidos</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Privacy">Vendas</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Privacy">Relatórios</a>
+                        </li>
+
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                Administrador
+                            </a>
+                            <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                                <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Action">Action</a>
+                                <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Another">Another action</a>
+                                <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Something">Something else here</a>
+                            </div>
                         </li>
                     </ul>
+                    
+                        @* <form >
+                            <div class="col-8">
+                                <input class="col-12" type="search" placeholder="Search" aria-label="Search">
+                            </div>
+                            <div class="col-8">
+                                <button class="btn-sm " type="submit">Search</button>
+                            </div>
+
+                        </form> *@
+                    
                     <partial name="_LoginPartial" />
                 </div>
+
             </div>
         </nav>
     </header>
