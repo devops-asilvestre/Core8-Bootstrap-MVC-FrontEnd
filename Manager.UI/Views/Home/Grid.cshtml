@@ -1,0 +1,62 @@
+﻿@{
+
+    ViewData["Title"] = "My Grid";
+}
+<div class="row">
+    <div class="col-xl-12">
+        <div class="panel panel-inverse">
+
+            <div class="panel-heading">
+                <h4 class="panel-title">@ViewData["Title"]</h4>
+                <div class="panel-heading-btn">
+                    <a href="javascript:;" class="btn btn-xs btn-icon btn-default" data-toggle="panel-expand"><i class="fa fa-expand"></i></a>
+                    <a href="javascript:;" class="btn btn-xs btn-icon btn-success" data-toggle="panel-reload"><i class="fa fa-redo"></i></a>
+                    <a href="javascript:;" class="btn btn-xs btn-icon btn-warning" data-toggle="panel-collapse"><i class="fa fa-minus"></i></a>
+                    <a href="javascript:;" class="btn btn-xs btn-icon btn-danger" data-toggle="panel-remove"><i class="fa fa-times"></i></a>
+                </div>
+            </div>
+
+            <d class="alert alert-lime alert-dismissible rounded-0 mb-0 fade show">
+                <button type="button" class="btn-close" data-bs-dismiss="alert">
+                </button>
+                Select adiciona recursos de seleção de itens a um DataTable. Os itens podem ser linhas, colunas ou células, que podem ser selecionadas de forma independente ou em conjunto. A seleção de itens pode ser particularmente útil em tabelas interativas onde os usuários podem realizar alguma ação na tabela, como editar linhas ou marcar itens nos quais executar uma ação.
+            </d>
+
+            <div class="panel-body">
+
+                <a class=" btn btn-lg btn-primary col-2 float-right" href="#" role="button">Add New Item</a>
+
+                <table id="data-table-select" class="table table-striped table-bordered align-middle">
+                    <thead>
+                        <tr>
+                            <th width="1%"></th>
+                            <th width="1%" data-orderable="false"></th>
+                            <th class="text-nowrap">Id</th>
+                            <th class="text-nowrap">Field</th>
+                            <th class="text-nowrap">ModeDownload</th>
+                            <th class="text-nowrap">ModeUpload</th>
+                            <th class="text-nowrap">Id</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        
+                            <tr class="odd gradeX">
+                                <td width="1%"><img src="~/img/application/Update.png" class="rounded h-30px my-n1 mx-n1" /></td>
+                                <td width="1%" data-orderable="false"></td>
+                                <td class="text-nowrap">Id</td>
+                                <td class="text-nowrap">Field</td>
+                                <td class="text-nowrap">ModeDownload</td>
+                                <td class="text-nowrap">ModeUpload</td>
+                                <td class="text-nowrap">Id</td>
+                            </tr>
+                        
+                    </tbody>
+                </table>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+<!-- script -->
+<script src="~/js/demo/table-manage-select.demo.js" asp-append-version="true"></script>

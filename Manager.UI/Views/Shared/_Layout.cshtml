@@ -7,59 +7,184 @@
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
     <link rel="stylesheet" href="~/Manager.UI.styles.css" asp-append-version="true" />
+    <style>
+
+        .dropdown-submenu {
+            position: relative;
+        }
+
+            .dropdown-submenu > .dropdown-menu {
+                top: 0;
+                left: 100%;
+                margin-top: -6px;
+                margin-left: -1px;
+                -webkit-border-radius: 0 6px 6px 6px;
+                -moz-border-radius: 0 6px 6px;
+                border-radius: 0 6px 6px 6px;
+            }
+
+            .dropdown-submenu:hover > .dropdown-menu {
+                display: block;
+            }
+
+            .dropdown-submenu > a:after {
+                display: block;
+                content: " ";
+                float: right;
+                width: 0;
+                height: 0;
+                border-color: transparent;
+                border-style: solid;
+                border-width: 5px 0 5px 5px;
+                border-left-color: #ccc;
+                margin-top: 5px;
+                margin-right: -10px;
+            }
+
+            .dropdown-submenu:hover > a:after {
+                border-left-color: #fff;
+            }
+
+            .dropdown-submenu.pull-left {
+                float: none;
+            }
+
+                .dropdown-submenu.pull-left > .dropdown-menu {
+                    left: -100%;
+                    margin-left: 10px;
+                    -webkit-border-radius: 6px 0 6px 6px;
+                    -moz-border-radius: 6px 0 6px 6px;
+                    border-radius: 6px 0 6px 6px;
+                }
+    </style>
 </head>
 <body>
     <header>
         <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
             <div class="container-fluid">
-                <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">Manager.UI</a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
-                        aria-expanded="false" aria-label="Toggle navigation">
+                <a class="navbar-brand" href="#"><strong>M2|Marketplace</strong></a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDarkDropdown" aria-controls="navbarNavDarkDropdown" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
-                <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
-                    <ul class="navbar-nav flex-grow-1">
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Features">Cadastros</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Pricing">Pedidos</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Privacy">Vendas</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Privacy">Relatórios</a>
+                <div class="collapse navbar-collapse" id="navbarNavDarkDropdown">
+                        <ul class="navbar-nav flex-lg-grow-1 nav nav-tabs dropdown-menu multi-level" role="menu" aria-labelledby="dropdownMenu">
+
+                        <!--|Menu Home|-->
+                        <li class="nav-item ">
+                            <a class="nav-link text-dark active bg-warning" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
                         </li>
 
-                        <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                Administrador
+                        <!--|Menu Cadastros|-->
+                        <li class="nav-item dropdown ">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDarkDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                Cadastros
                             </a>
-                            <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                                <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Action">Action</a>
-                                <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Another">Another action</a>
-                                <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Something">Something else here</a>
-                            </div>
+                            <ul class="dropdown-menu" aria-labelledby="navbarDarkDropdownMenuLink">
+                                <!--|Menu Empresa|-->
+                                <li class="dropdown-submenu">
+                                    <a class="dropdown-item dropdown-toggle" href="#" id="navbarDarkDropdownMenuLink2" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                        Empresas
+                                    </a>
+                                    <ul class="dropdown-menu " aria-labelledby="navbarDarkDropdownMenuLink2">
+                                        <li><a class="dropdown-item text-capitalize" asp-area="" asp-action="Index" asp-controller="Cliente">Cliente</a></li>
+                                        <li><a class="dropdown-item text-capitalize" asp-area="" asp-action="Index" asp-controller="Fornecedore" >Fornecedor</a></li>
+                                        <li><a class="dropdown-item text-capitalize" asp-area="" asp-action="Index" asp-controller="Transportadora" >Transportadora</a></li>
+                                        <li><a class="dropdown-item text-capitalize" asp-area="" asp-action="Index" asp-controller="Frota" >Frota</a></li>
+                                    </ul>
+                                </li>
+                                <!--|Menu Produtos|-->
+                                <li class="dropdown-submenu">
+                                    <a class="dropdown-item dropdown-toggle" href="#" id="navbarDarkDropdownMenuLink2" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                        Produtos
+                                    </a>
+                                    <ul class="dropdown-menu" aria-labelledby="navbarDarkDropdownMenuLink2">
+                                        <li><a class="dropdown-item text-capitalize" asp-area="" asp-action="Index" asp-controller="Categoria">Categorias</a></li>
+                                        <li><a class="dropdown-item text-capitalize" asp-area="" asp-action="Index" asp-controller="Produto">Produtos</a></li>
+                                        <li><a class="dropdown-item text-capitalize" asp-area="" asp-action="Index" asp-controller="Campanha">Campanhas</a></li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </li>
+
+                        <!--|Menu Pedidos|-->
+                        <li class="nav-item dropdown ">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDarkDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                Pedidos
+                            </a>
+                            <ul class="dropdown-menu" aria-labelledby="navbarDarkDropdownMenuLink">
+                                <li><a class="dropdown-item text-capitalize" asp-area="" asp-action="Index" asp-controller="venda" >Vendas</a></li>
+                                <li><a class="dropdown-item text-capitalize" asp-area="" asp-action="Index" asp-controller="Compra">Compras</a></li>
+                                <li><hr class="dropdown-divider"></li>
+                                <!--|Menu Notas Fiscais|-->
+                                <li class="dropdown-submenu">
+                                    <a class="dropdown-item dropdown-toggle text-capitalize" href="#" id="navbarDarkDropdownMenuLink2" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                        Notas fiscais
+                                    </a>
+                                    <ul class="dropdown-menu " aria-labelledby="navbarDarkDropdownMenuLink2">
+                                        <li><a class="dropdown-item text-capitalize" asp-area="" asp-action="Entrada"   asp-controller="NotaFiscal">Entrada</a></li>
+                                        <li><a class="dropdown-item text-capitalize" asp-area="" asp-action="Saida"     asp-controller="NotaFiscal">Saida</a></li>
+                                        <li><a class="dropdown-item text-capitalize" asp-area="" asp-action="Devolucao" asp-controller="NotaFiscal">Devolução</a></li>
+                                        <li><a class="dropdown-item text-capitalize" asp-area="" asp-action="Devolucao" asp-controller="NotaFiscal">Cancelamento</a></li>
+                                        
+                                    </ul>
+                                </li>
+                            </ul>
+                        </li>
+
+                        <!--|Menu Estoque|-->
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDarkDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                Estoque
+                            </a>
+                            <ul class="dropdown-menu" aria-labelledby="navbarDarkDropdownMenuLink">
+                                <li><a class="dropdown-item text-capitalize" asp-area="" asp-action="Movimento" asp-controller="Estoque">Movimentação</a></li>
+                                <li><a class="dropdown-item text-capitalize" asp-area="" asp-action="Devolucao" asp-controller="Estoque">Devolução</a></li>
+                                <li><hr class="dropdown-divider"></li>
+                                <li><a class="dropdown-item text-capitalize" asp-area="" asp-action="Transferencia" asp-controller="Estoque">Transferencia</a></li>
+                            </ul>
+                        </li>
+
+                        <!--|Menu Financeiro|-->
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDarkDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                Financeiro
+                            </a>
+                            <ul class="dropdown-menu" aria-labelledby="navbarDarkDropdownMenuLink">
+                                <li><a class="dropdown-item text-capitalize" asp-area="" asp-action="CPagar" asp-controller="Financeiro">Contas a pagar</a></li>
+                                <li><a class="dropdown-item text-capitalize" asp-area="" asp-action="CReceber" asp-controller="Financeiro">Contas a receber</a></li>
+                                <li><hr class="dropdown-divider"></li>
+                                <li><a class="dropdown-item text-capitalize" asp-area="" asp-action="Aliquota" asp-controller="Financeiro">Aliquotas</a></li>
+                            </ul>
+                        </li>
+
+                        <!--|Menu Relatórios|-->
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDarkDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                Relatórios
+                            </a>
+                            <ul class="dropdown-menu" aria-labelledby="navbarDarkDropdownMenuLink">
+                                <li><a class="dropdown-item text-capitalize" asp-area="" asp-action="Analitico" asp-controller="Relatorio">Analiticos</a></li>
+                                <li><a class="dropdown-item text-capitalize" asp-area="" asp-action="Sintetico" asp-controller="Relatorio">Sintéticos</a></li>
+                            </ul>
+                        </li>
+
+                        <!--|Menu Administrativo|-->
+                        <li class="nav-item dropdown bg-light">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDarkDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                Administrativo
+                            </a>
+                            <ul class="dropdown-menu bg-light" aria-labelledby="navbarDarkDropdownMenuLink">
+                                
+                                <li><a class="dropdown-item text-capitalize" asp-area="" asp-action="Index" asp-controller="Usuario">Usuários</a></li>
+                                <li><a class="dropdown-item text-capitalize" asp-area="" asp-action="Index" asp-controller="UsuarioPerfil">Perfis</a></li>
+                                <li><a class="dropdown-item text-capitalize" asp-area="" asp-action="Index" asp-controller="Log">Logs</a></li>
+                                <li><hr class="dropdown-divider"></li>
+                                <li><a class="dropdown-item text-capitalize" asp-area="" asp-action="Index" asp-controller="Parametro">Parametrização</a></li>
+                            </ul>
                         </li>
                     </ul>
-                    
-                        @* <form >
-                            <div class="col-8">
-                                <input class="col-12" type="search" placeholder="Search" aria-label="Search">
-                            </div>
-                            <div class="col-8">
-                                <button class="btn-sm " type="submit">Search</button>
-                            </div>
-
-                        </form> *@
-                    
-                    <partial name="_LoginPartial" />
                 </div>
-
+                <partial name="_LoginPartial" />
             </div>
         </nav>
     </header>
@@ -71,7 +196,7 @@
 
     <footer class="border-top footer text-muted">
         <div class="container">
-            &copy; 2024 - Manager.UI - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+            &copy; 2024 - M2|Marketplace - <a asp-area="" asp-controller="Home" asp-action="Grid">Privacy</a>
         </div>
     </footer>
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
