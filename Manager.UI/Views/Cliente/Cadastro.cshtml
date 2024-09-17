@@ -1,0 +1,551 @@
+﻿@{
+    ViewData["Title"] = "Clientes :: Cadastro";
+}
+
+<div class="row">
+    <div class="col-xl-12">
+        <div class="panel panel-inverse border" data-sortable-id="form-validation-1">
+
+            <div class="panel-heading">
+                <h4 class="panel-title">@ViewData["Title"] </h4>
+                <div class="panel-heading-btn">
+                    <a href="index" class="btn btn-xs btn-icon btn-danger"  data-toggle="panel-remove"><i class="fa fa-times"></i></a>
+                </div>
+            </div>
+
+            <d class="alert alert-lime alert-dismissible rounded-0 mb-0 fade show">
+                <button type="button" class="btn-close" data-bs-dismiss="alert">
+                </button>
+                <li>
+                    Select adiciona recursos de seleção de itens a um DataTable.
+                </li>
+                <li>
+                    Os itens podem ser linhas, colunas ou células, que podem ser selecionadas de forma independente ou em conjunto.
+                </li>
+                <li>
+                    A seleção de itens pode ser particularmente útil em tabelas interativas onde os usuários podem realizar alguma ação na tabela,
+                </li>
+                <li>
+                    Como editar linhas ou marcar itens nos quais executar uma ação.
+                </li>
+            </d>
+
+            <div class="panel-body ">
+
+                <ul class="nav nav-tabs bg-blue panel-body-padding">
+                    <li class="nav-item">
+                        &nbsp;
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" id="liformulario_empresa" href="#" tabindex="-1" onclick="javascript:fnMoveNavBarMenu('formulario_empresa');">Empresa</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link " id="liformulario_endereco" href="#" tabindex="-1" onclick="javascript:fnMoveNavBarMenu('formulario_endereco');">Endereços</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link " id="liformulario_contato" href="#" tabindex="-1" onclick="javascript:fnMoveNavBarMenu('formulario_contato');">Contatos</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link " id="liformulario_banco" href="#" tabindex="-1" onclick="javascript:fnMoveNavBarMenu('formulario_banco');">Informações Bancárias</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link " id="liformulario_certificado" href="#" tabindex="-1" onclick="javascript:fnMoveNavBarMenu('formulario_certificado');">Certificado Digital</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link " id="liformulario_documento" href="#" tabindex="-1" onclick="javascript:fnMoveNavBarMenu('formulario_documento');">Documentos</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link " id="liformulario_historico" href="#" tabindex="-1" onclick="javascript:fnMoveNavBarMenu('formulario_historico');">Histórico</a>
+                    </li>
+                </ul>
+
+                @* <form class="form-horizontal border" data-parsley-validate="true" name="demo-form" asp-action="gravar"> *@
+                <form class="form-horizontal border" asp-action="Index">
+                    <div id="dvformulario_empresa"      class="form-group row mb-3 panel-body-padding">
+                        <div class="col-lg-2">
+                            <label class="col-lg-12 col-form-label form-label" for="website">Tipo Empresa :</label>
+                            <select data-mdb-select-init class="form-control" data-parsley-required="true" id="cliente_tipo_empresa">
+                                <option value="0"></option>
+                                <option value="1">Juridica</option>
+                                <option value="2">Fisica</option>
+                            </select>
+                        </div>
+                        <div class="col-lg-2">
+                            <label class="col-lg-12 col-form-label form-label" for="fullname">CNPJ :</label>
+                            <input class="form-control" type="text" id="cliente_cnpj" placeholder="Required" data-parsley-required="true" />
+                        </div>
+                        <div class="col-lg-8">
+                            <label class="col-lg-12 col-form-label form-label" for="fullname">Razão Social</label>
+                            <input class="form-control" type="text" id="cliente_nome" placeholder="Required" data-parsley-required="true" />
+                        </div>
+                        <div class="col-lg-10">
+                            <label class="col-lg-12 col-form-label form-label" for="fullname">Nome Fantasia</label>
+                            <input class="form-control" type="text" id="cliente_nomefantasia" placeholder="Required" data-parsley-required="true" />
+                        </div>
+                        <div class="col-lg-2">
+                            <label class="col-lg-12 col-form-label form-label" for="fullname">Inscrição Estatual</label>
+                            <input class="form-control" type="text" id="cliente_inscricao_estadual" placeholder="Required" data-parsley-required="true" />
+                        </div>
+                        <div class="col-lg-2">
+                            <label class="col-lg-12 col-form-label form-label" for="fullname">Inscrição Municipal</label>
+                            <input class="form-control" type="text" id="cliente_inscricao_municipal" placeholder="Required" data-parsley-required="true" />
+                        </div>
+                        <div class="col-lg-2">
+                            <label class="col-lg-12 col-form-label form-label" for="website">Telefone</label>
+                            <input class="form-control" autocomplete="new-password" aria-required="true" placeholder="(xx) 99999-0000" type="tel" data-val="true" data-val-length="A telefone deve ter 11." data-val-length-max="'11'" data-val-length-min="11" data-val-required="O campo telefone é obrigatório." id="cliente_telefone" maxlength="11" />
+                        </div>
+                        <div class="col-lg-4">
+                            <label class="col-lg-12 col-form-label form-label" for="website">Email</label>
+                            <input class="form-control" autocomplete="username" aria-required="true" placeholder="name@example.com" type="email" data-val="true" data-val-email="O campo Email não é um endereço de email válido." data-val-required="O campo E-mail é obrigatório." id="Input_Email" value="" />
+                        </div>
+                        <div class="col-lg-4">
+                            <label class="col-lg-12 col-form-label form-label" for="website">WebSite</label>
+                            <input class="form-control" autocomplete="username" aria-required="true" placeholder="http://.com" data-val="true" data-val-email="O campo Email não é um endereço de email válido." data-val-required="O campo E-mail é obrigatório." id="Input_Email" value="" />
+                        </div>                        
+                        <div id="dvformulario_submit" class="form-group row">
+                            <label class="col-lg-11 col-form-label form-label">&nbsp;</label>
+
+                            <div class="col-lg-1">
+                                <label class="col-lg-12 col-form-label form-label" for="website">&nbsp;</label>
+                                <button type="submit" class="btn col-lg-12 btn-xs btn-success">Gravar</button>
+                            </div>
+                            &nbsp;
+                        </div>
+                    </div>
+
+                    <div id="dvformulario_endereco"     class="form-group row mb-3 panel-body-padding">
+                        <div id="dvformulario_endereco_novo" class="form-group row mb-3 panel-body-padding">
+                            <div class="col-lg-2">
+                                <label class="col-lg-12 col-form-label form-label" for="website">Tipo :</label>
+                                <select data-mdb-select-init class="form-control" data-parsley-required="true" id="cliente_end_tipo">
+                                    <option value="0"></option>
+                                    <option value="1">Principal</option>
+                                    <option value="2">Entrega</option>
+                                    <option value="2">Cobrança</option>
+                                </select>
+                            </div>
+                            <div class="col-lg-2">
+                                <label class="col-lg-12 col-form-label form-label" for="website">Cep :</label>
+                                <input class="form-control" type="text" id="cliente_end_cep" placeholder="Required" data-parsley-required="true" />
+                            </div>
+                            <div class="col-lg-8">
+                                <label class="col-lg-12 col-form-label form-label" for="fullname">Logradouro :</label>
+                                <input class="form-control" type="text" id="cliente_end_logradouro" placeholder="Required" data-parsley-required="true" />
+                            </div>
+                            <div class="col-lg-2">
+                                <label class="col-lg-12 col-form-label form-label" for="fullname">Numero :</label>
+                                <input class="form-control" type="text" id="cliente_end_numero" placeholder="Required" data-parsley-required="true" />
+                            </div>
+                            <div class="col-lg-3">
+                                <label class="col-lg-12 col-form-label form-label" for="fullname">Complemento :</label>
+                                <input class="form-control" type="text" id="cliente_end_complemento" placeholder="Required" data-parsley-required="true" />
+                            </div>
+                            <div class="col-lg-3">
+                                <label class="col-lg-12 col-form-label form-label" for="fullname">Bairro :</label>
+                                <input class="form-control" type="text" id="cliente_end_bairro" placeholder="Required" data-parsley-required="true" />
+                            </div>
+                            <div class="col-lg-2">
+                                <label class="col-lg-12 col-form-label form-label" for="fullname">Codigo Municipio :</label>
+                                <input class="form-control" type="text" id="cliente_end_codigo_municipio" placeholder="Required" data-parsley-required="true" />
+                            </div>
+                            <div class="col-lg-2">
+                                <label class="col-lg-12 col-form-label form-label" for="website">Uf :</label>
+                                <select data-mdb-select-init class="form-control" data-parsley-required="true" id="cliente_end_uf">
+                                    <option value="0"></option>
+                                    <option value="SP">São Paulo</option>
+                                    <option value="RJ">Rio de Janeiro</option>
+                                    <option value="MG">Minas Gerais</option>
+                                    <option value="TO">Tocantins</option>
+                                </select>
+                            </div>
+                            <div class="col-lg-2">
+                                <label class="col-lg-12 col-form-label form-label" for="website">Codigo Pais :</label>
+                                <select data-mdb-select-init class="form-control" data-parsley-required="true" id="cliente_end_codigo_pais">
+                                    <option value="0"></option>
+                                    <option value="SP">Brasil</option>
+                                    <option value="RJ">Japão</option>
+                                    <option value="MG">China</option>
+                                    <option value="TO">Estados Unidos da America</option>
+                                </select>
+                            </div>
+                            <div class="col-lg-3">
+                                <label class="col-lg-12 col-form-label form-label" for="website">Email :</label>
+                                <input class="form-control" autocomplete="username" aria-required="true" placeholder="name@example.com" type="email" data-val="true" data-val-email="O campo Email não é um endereço de email válido." data-val-required="O campo E-mail é obrigatório." id="Input_Email" value="" />
+
+                            </div>
+                            <div class="col-lg-1">
+                                <label class="col-lg-12 col-form-label form-label" for="website">&nbsp;</label>
+                                <a href="javascript:fnShowEnderecoNovo('dvformulario_endereco_novo');" class="btn btn-xs btn-success" data-toggle="panel-reload">Gravar</i></a>
+                            </div>
+                        </div>
+                        <div id="dvformulario_endereco_lista" class="form-group row mb-3 panel-body-padding">
+                            <div class="col-lg-12 ">
+                                &nbsp;
+                                <div class="panel panel-inverse border">
+
+                                    <div class="panel-heading bg-grid-box-title">
+                                        <h4 class="panel-title">:: Endereços</h4>
+                                        <div class="panel-heading-btn border">
+                                            <a href="javascript:fnShowEnderecoNovo('dvformulario_endereco_novo');" class="btn btn-xs btn-success" data-toggle="panel-reload">Adicionar</i></a>
+                                        </div>
+                                    </div>
+
+                                    <div class="panel-body">
+                                        <table id="data-table-select" class="table table-striped table-bordered align-middle">
+                                            <thead>
+                                                <tr>
+                                                    <th width="1%"></th>
+                                                    <th width="1%" data-orderable="false"></th>
+                                                    <th class="text-nowrap">Id</th>
+                                                    <th class="text-nowrap">Field</th>
+                                                    <th class="text-nowrap">ModeDownload</th>
+                                                    <th class="text-nowrap">ModeUpload</th>
+                                                    <th class="text-nowrap">Id</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+
+                                                <tr class="odd gradeX">
+                                                    <td width="1%">***</td>
+                                                    <td width="1%" data-orderable="false"></td>
+                                                    <td class="text-nowrap">Id</td>
+                                                    <td class="text-nowrap">Field</td>
+                                                    <td class="text-nowrap">ModeDownload</td>
+                                                    <td class="text-nowrap">ModeUpload</td>
+                                                    <td class="text-nowrap">Id</td>
+                                                </tr>
+
+                                            </tbody>
+                                        </table>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div id="dvformulario_contato"      class="form-group row mb-3 panel-body-padding">
+                        <div id="dvformulario_contato_novo" class="form-group row mb-3 panel-body-padding">
+                            <div class="col-lg-5">
+                                <label class="col-lg-12 col-form-label form-label" for="fullname">Nome :</label>
+                                <input class="form-control" type="text" id="cliente_contato_nome" placeholder="Required" data-parsley-required="true" />
+                            </div>
+                            <div class="col-lg-2">
+                                <label class="col-lg-12 col-form-label form-label" for="fullname">WhatApp :</label>
+                                <input class="form-control" type="text" id="cliente_contato_telefone" placeholder="(00) 00000-0000" data-parsley-required="true" />
+                            </div>
+                            <div class="col-lg-2">
+                                <label class="col-lg-12 col-form-label form-label" for="fullname">Telefone Com. :</label>
+                                <input class="form-control" type="text" id="cliente_contato_telefone_comercial" placeholder="(00) 00000-0000" data-parsley-required="true" />
+                            </div>
+                            <div class="col-lg-2">
+                                <label class="col-lg-4 col-form-label form-label" for="email">Situacao:</label>
+                                <select data-mdb-select-init class="form-control" data-parsley-required="true">
+                                    <option value=""></option>
+                                    <option value="1">Ativo</option>
+                                    <option value="2">Inativo</option>
+                                </select>
+                            </div>
+                            <div class="col-lg-1">
+                                <label class="col-lg-12 col-form-label form-label" for="website">&nbsp;</label>
+                                <a href="javascript:fnShowEnderecoNovo('dvformulario_contato_novo');" class="btn btn-xs btn-success" data-toggle="panel-reload">Gravar</i></a>
+                            </div>
+                        </div>
+                        <div id="dvformulario_contato_lista" class="form-group row mb-3 panel-body-padding">
+                            <div class="col-lg-12 ">
+                                &nbsp;
+                                <div class="panel panel-inverse border">
+
+                                    <div class="panel-heading bg-grid-box-title">
+                                        <h4 class="panel-title">:: Contatos</h4>
+                                        <div class="panel-heading-btn border">
+                                            <a href="javascript:fnShowEnderecoNovo('dvformulario_contato_novo');" class="btn btn-xs btn-success" data-toggle="panel-reload">Adicionar</i></a>
+                                        </div>
+                                    </div>
+
+                                    <div class="panel-body">
+                                        <table id="data-table-select" class="table table-striped table-bordered align-middle">
+                                            <thead>
+                                                <tr>
+                                                    <th width="1%"></th>
+                                                    <th width="1%" data-orderable="false"></th>
+                                                    <th class="text-nowrap">Id</th>
+                                                    <th class="text-nowrap">Field</th>
+                                                    <th class="text-nowrap">ModeDownload</th>
+                                                    <th class="text-nowrap">ModeUpload</th>
+                                                    <th class="text-nowrap">Id</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+
+                                                <tr class="odd gradeX">
+                                                    <td width="1%">***</td>
+                                                    <td width="1%" data-orderable="false"></td>
+                                                    <td class="text-nowrap">Id</td>
+                                                    <td class="text-nowrap">Field</td>
+                                                    <td class="text-nowrap">ModeDownload</td>
+                                                    <td class="text-nowrap">ModeUpload</td>
+                                                    <td class="text-nowrap">Id</td>
+                                                </tr>
+
+                                            </tbody>
+                                        </table>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div id="dvformulario_banco"        class="form-group row mb-3 panel-body-padding">
+                        <div id="dvformulario_banco_novo" class="form-group row mb-3 panel-body-padding">
+                            <div class="col-lg-2">
+                                <label class="col-lg-12 col-form-label form-label" for="fullname">Nome completo da empresa</label>
+                                <input class="form-control" type="text" id="cliente_banco_empresa" placeholder="Required" data-parsley-required="true" />
+                            </div>
+                            <div class="col-lg-2">
+                                <label class="col-lg-12 col-form-label form-label" for="fullname">Número da conta </label>
+                                <input class="form-control" type="text" id="cliente_banco_numero_conta" placeholder="Required" data-parsley-required="true" />
+                            </div>
+                            <div class="col-lg-2">
+                                <label class="col-lg-12 col-form-label form-label" for="fullname">Agência Bancária</label>
+                                <input class="form-control" type="text" id="cliente_banco_numero_conta" placeholder="Required" data-parsley-required="true" />
+                            </div>
+                            <div class="col-lg-2">
+                                <label class="col-lg-12 col-form-label form-label" for="fullname">Comprovantes de abertura</label>
+                                <input class="form-control" type="text" id="cliente_banco_numero_conta" placeholder="Required" data-parsley-required="true" />
+                            </div>
+                            <div class="col-lg-1">
+                                <label class="col-lg-12 col-form-label form-label" for="website">&nbsp;</label>
+                                <a href="javascript:fnShowEnderecoNovo('dvformulario_banco_novo');" class="btn btn-xs btn-success" data-toggle="panel-reload">Gravar</i></a>
+                            </div>
+                        </div>
+                        <div id="dvformulario_banco_lista" class="form-group row mb-3 panel-body-padding">
+                            <div class="col-lg-12 ">
+                                &nbsp;
+                                <div class="panel panel-inverse border">
+
+                                    <div class="panel-heading bg-grid-box-title">
+                                        <h4 class="panel-title">:: Instituições Financeiras</h4>
+                                        <div class="panel-heading-btn border">
+                                            <a href="javascript:fnShowEnderecoNovo('dvformulario_banco_novo');" class="btn btn-xs btn-success" data-toggle="panel-reload">Adicionar</i></a>
+                                        </div>
+                                    </div>
+
+                                    <div class="panel-body">
+                                        <table id="data-table-select" class="table table-striped table-bordered align-middle">
+                                            <thead>
+                                                <tr>
+                                                    <th width="1%"></th>
+                                                    <th width="1%" data-orderable="false"></th>
+                                                    <th class="text-nowrap">Id</th>
+                                                    <th class="text-nowrap">Field</th>
+                                                    <th class="text-nowrap">ModeDownload</th>
+                                                    <th class="text-nowrap">ModeUpload</th>
+                                                    <th class="text-nowrap">Id</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+
+                                                <tr class="odd gradeX">
+                                                    <td width="1%">***</td>
+                                                    <td width="1%" data-orderable="false"></td>
+                                                    <td class="text-nowrap">Id</td>
+                                                    <td class="text-nowrap">Field</td>
+                                                    <td class="text-nowrap">ModeDownload</td>
+                                                    <td class="text-nowrap">ModeUpload</td>
+                                                    <td class="text-nowrap">Id</td>
+                                                </tr>
+
+                                            </tbody>
+                                        </table>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div id="dvformulario_certificado"  class="form-group row mb-3 panel-body-padding">
+                        <div id="dvformulario_certificado_novo" class="form-group row mb-3 panel-body-padding">
+                            <div class="col-lg-5">
+                                <label class="col-lg-12 col-form-label form-label" for="website">Certificado</label>
+                                <input class="form-control" type="text" id="cliente_certificado" placeholder="Required" data-parsley-required="true" />
+                            </div>
+                            <div class="col-lg-3">
+                                <label class="col-lg-12 col-form-label form-label" for="fullname">Senha</label>
+                                <input class="form-control" autocomplete="new-password" aria-required="true" placeholder="Senha" type="password" data-val="true" data-val-length="A senha deve ter no mínimo 6 e no máximo 100 caracteres." data-val-length-max="100" data-val-length-min="6" data-val-required="O campo Senha é obrigatório." id="cliente_certificado_senha" maxlength="100" />
+                            </div>
+                            <div class="col-lg-2">
+                                <label class="col-lg-12 col-form-label form-label" for="fullname">Situação</label>
+                                <select data-mdb-select-init class="form-control" data-parsley-required="true" id="cliente_end_numero">
+                                    <option value="0"></option>
+                                    <option value="1">Ativo</option>
+                                    <option value="2">Inativo</option>
+                                </select>
+                            </div>
+                            <div class="col-lg-1">
+                                <label class="col-lg-12 col-form-label form-label" for="website">&nbsp;</label>
+                                <a href="javascript:fnShowEnderecoNovo('dvformulario_certificado_novo');" class="btn btn-xs btn-success" data-toggle="panel-reload">Gravar</i></a>
+                            </div>
+                        </div>
+                        <div id="dvformulario_certificado_lista" class="form-group row mb-3 panel-body-padding">
+                            <div class="col-lg-12 ">
+                                &nbsp;
+                                <div class="panel panel-inverse border">
+                                    <div class="panel-heading bg-grid-box-title">
+                                        <h4 class="panel-title">:: Certificado Digital</h4>
+                                        <div class="panel-heading-btn border">
+                                            <a href="javascript:fnShowEnderecoNovo('dvformulario_certificado_novo');" class="btn btn-xs btn-success" data-toggle="panel-reload">Adicionar</i></a>
+                                        </div>
+                                    </div>
+                                    <div class="panel-body">
+                                        <table id="data-table-select" class="table table-striped table-bordered align-middle">
+                                            <thead>
+                                                <tr>
+                                                    <th width="1%"></th>
+                                                    <th width="1%" data-orderable="false"></th>
+                                                    <th class="text-nowrap">Id</th>
+                                                    <th class="text-nowrap">Field</th>
+                                                    <th class="text-nowrap">ModeDownload</th>
+                                                    <th class="text-nowrap">ModeUpload</th>
+                                                    <th class="text-nowrap">Id</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+
+                                                <tr class="odd gradeX">
+                                                    <td width="1%">***</td>
+                                                    <td width="1%" data-orderable="false"></td>
+                                                    <td class="text-nowrap">Id</td>
+                                                    <td class="text-nowrap">Field</td>
+                                                    <td class="text-nowrap">ModeDownload</td>
+                                                    <td class="text-nowrap">ModeUpload</td>
+                                                    <td class="text-nowrap">Id</td>
+                                                </tr>
+
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div id="dvformulario_documento"    class="form-group row mb-3 panel-body-padding">
+                        <div id="dvformulario_documento_novo" class="form-group row mb-3 panel-body-padding">
+                            <div class="col-lg-4">
+                                <label class="col-lg-12 col-form-label form-label" for="website">Documento</label>
+                                <input class="form-control" type="file" autocomplete="username" aria-required="true" placeholder="selecione arquivo" data-val="true" data-val-email="O campo Email não é um endereço de email válido." data-val-required="O campo E-mail é obrigatório." id="cliente_documento" value="" />
+                            </div>
+                            <div class="col-lg-2">
+                                <label class="col-lg-12 col-form-label form-label" for="fullname">Tipo</label>
+                                <select data-mdb-select-init class="form-control" data-parsley-required="true" id="cliente_documento_tipo">
+                                    <option value="0"></option>
+                                    <option value="1">Cartao de CNPJ</option>
+                                    <option value="2">Contrato Social</option>
+                                </select>
+                            </div>
+                            <div class="col-lg-2">
+                                <label class="col-lg-12 col-form-label form-label" for="fullname">Situação</label>
+                                <select data-mdb-select-init class="form-control" data-parsley-required="true" id="cliente_end_numero">
+                                    <option value="0"></option>
+                                    <option value="1">Ativo</option>
+                                    <option value="2">Inativo</option>
+                                </select>
+                            </div>
+                            <div class="col-lg-1">
+                                <label class="col-lg-12 col-form-label form-label" for="website">&nbsp;</label>
+                                <a href="javascript:fnShowEnderecoNovo('dvformulario_documento_novo');" class="btn btn-xs btn-success" data-toggle="panel-reload">Gravar</i></a>
+                            </div>
+                        </div>
+                        <div id="dvformulario_documento_lista" class="form-group row mb-3 panel-body-padding">
+                            <div class="col-lg-12 ">
+                                &nbsp;
+                                <div class="panel panel-inverse border">
+                                    <div class="panel-heading bg-grid-box-title">
+                                        <h4 class="panel-title">:: Documento</h4>
+                                        <div class="panel-heading-btn border">
+                                            <a href="javascript:fnShowEnderecoNovo('dvformulario_documento_novo');" class="btn btn-xs btn-success" data-toggle="panel-reload">Adicionar</i></a>
+                                        </div>
+                                    </div>
+                                    <div class="panel-body">
+                                        <table id="data-table-select" class="table table-striped table-bordered align-middle">
+                                            <thead>
+                                                <tr>
+                                                    <th width="1%"></th>
+                                                    <th width="1%" data-orderable="false"></th>
+                                                    <th class="text-nowrap">Id</th>
+                                                    <th class="text-nowrap">Field</th>
+                                                    <th class="text-nowrap">ModeDownload</th>
+                                                    <th class="text-nowrap">ModeUpload</th>
+                                                    <th class="text-nowrap">Id</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+
+                                                <tr class="odd gradeX">
+                                                    <td width="1%">***</td>
+                                                    <td width="1%" data-orderable="false"></td>
+                                                    <td class="text-nowrap">Id</td>
+                                                    <td class="text-nowrap">Field</td>
+                                                    <td class="text-nowrap">ModeDownload</td>
+                                                    <td class="text-nowrap">ModeUpload</td>
+                                                    <td class="text-nowrap">Id</td>
+                                                </tr>
+
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div id="dvformulario_historico"    class="form-group row mb-3 panel-body-padding">
+                        <div class="col-lg-12 ">
+                            &nbsp;
+                            <div class="panel panel-inverse border">
+                                <div class="panel-heading bg-grid-box-title">
+                                    <h4 class="panel-title">:: Histórico</h4>
+                                </div>
+                                <div class="panel-body">
+                                    <table id="data-table-select" class="table table-striped table-bordered align-middle">
+                                        <thead>
+                                            <tr>
+                                                <th width="1%"></th>
+                                                <th width="1%" data-orderable="false"></th>
+                                                <th class="text-nowrap">Id</th>
+                                                <th class="text-nowrap">Field</th>
+                                                <th class="text-nowrap">ModeDownload</th>
+                                                <th class="text-nowrap">ModeUpload</th>
+                                                <th class="text-nowrap">Id</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+
+                                            <tr class="odd gradeX">
+                                                <td width="1%">***</td>
+                                                <td width="1%" data-orderable="false"></td>
+                                                <td class="text-nowrap">Id</td>
+                                                <td class="text-nowrap">Field</td>
+                                                <td class="text-nowrap">ModeDownload</td>
+                                                <td class="text-nowrap">ModeUpload</td>
+                                                <td class="text-nowrap">Id</td>
+                                            </tr>
+
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+<script asp-append-version="true" src="~/lib/jquery/dist/jquery.min.js"></script>
+
+<script src="~/js/setting_cliente.js" asp-append-version="true"></script>

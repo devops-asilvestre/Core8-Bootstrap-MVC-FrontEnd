@@ -1,0 +1,46 @@
+﻿@{
+    ViewData["Title"] = "Registro";
+    Layout = "~/Views/Shared/_LoginLayout.cshtml";
+}
+
+<div class="col-xl-12">
+    <h4 class="panel-title">@ViewData["Title"]</h4>
+    <div class="row">
+        <div class="col-md-4">
+            <form id="registerForm" method="post" action="/Account/Registro">
+                <h2>Crie uma nova conta.</h2>
+                <hr />
+
+                <div class="form-floating mb-3">
+                    <input class="form-control" autocomplete="username" aria-required="true" placeholder="nome@contoso.com" type="email" data-val="true" data-val-email="O campo Email não é um endereço de email válido." data-val-required="O campo E-mail é obrigatório." id="Input_Email" name="Input.Email" value="" />
+                    <label for="Input_Email">Email</label>
+                    <span class="text-danger field-validation-valid" data-valmsg-for="Input.Email" data-valmsg-replace="true"></span>
+                </div>
+                <div class="form-floating mb-3">
+                    <input class="form-control" autocomplete="new-password" aria-required="true" placeholder="Senha" type="password" data-val="true" data-val-length="A senha deve ter no mínimo 6 e no máximo 100 caracteres." data-val-length-max="100" data-val-length-min="6" data-val-required="O campo Senha é obrigatório." id="Input_Password" maxlength="100" name="Input.Password" />
+                    <label for="Input_Password">Senha</label>
+                    <span class="text-danger field-validation-valid" data-valmsg-for="Input.Password" data-valmsg-replace="true"></span>
+                </div>
+                <div class="form-floating mb-3">
+                    <input class="form-control" autocomplete="new-password" aria-required="true" placeholder="senha" type="password" data-val="true" data-val-equalto="A senha e a senha de confirmação não coincidem." data-val-equalto-other="*.Password" id="Input_ConfirmPassword" name="Input.ConfirmPassword" />
+                    <label for="Input_ConfirmPassword">Confirme sua senha</label>
+                    <span class="text-danger field-validation-valid" data-valmsg-for="Input.ConfirmPassword" data-valmsg-replace="true"></span>
+                </div>
+                <button id="registerSubmit" type="submit" class="w-100 btn btn-lg btn-primary">Cadastre-se</button>
+            </form>
+        </div>
+        <div class="col-md-6 col-md-offset-2">
+            <section>
+                <h3>Use outro serviço para se registrar.</h3>
+                <hr />
+                <div>
+                    <p>
+                        Não há serviços de autenticação externos configurados. Veja isto<a href="https://go.microsoft.com/fwlink/?LinkID=532715">
+                            artigo sobre como configurar este aplicativo ASP.NET para oferecer suporte ao login por meio de serviços externos
+                        </a>.
+                    </p>
+                </div>
+            </section>
+        </div>
+    </div>
+</div>

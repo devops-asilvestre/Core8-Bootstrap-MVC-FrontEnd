@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="~/lib/datatable/dist/datatables.css" />
     <link rel="stylesheet" href="~/lib/plugins/bootstrap-daterangepicker/daterangepicker.css" />
     <link rel="stylesheet" href="~/lib/plugins/bootstrap-datepicker/dist/css/bootstrap-datepicker.css" />
-    <link rel="stylesheet" href="~/lib/plugins/bootstrap-daterangepicker/daterangepicker.css"  />
+    <link rel="stylesheet" href="~/lib/plugins/bootstrap-daterangepicker/daterangepicker.css" />
     <link rel="stylesheet" href="~/lib/plugins/bootstrap-datetime-picker/css/bootstrap-datetimepicker.min.css" />
 
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
@@ -16,6 +16,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 <body class="body">
+    <!--|Area de Header|-->
     <header>
 
         <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
@@ -150,20 +151,15 @@
         </nav>
 
     </header>
-
     
-
-    <div id="content" class="body form  ">
-
+    <!--|Area de Trabalho|-->
+    <div id="content" class="app-content">
         @RenderBody()
-        
     </div>
+    <a href="javascript:;" class="btn btn-icon btn-circle btn-success btn-scroll-to-top" data-toggle="scroll-to-top"><i class="fa fa-angle-up"></i></a>
 
-    <footer class="border-top footer text-muted">
-        <div class="container">
-            &copy; 2024 - M2|Marketplace - <a asp-area="" asp-controller="Home" asp-action="Grid">Privacy</a>
-        </div>
-    </footer>
+    <!--|Area de Roda-Pé|-->
+
     <script asp-append-version="true" src="~/lib/jquery/dist/jquery.min.js"></script>
     <script asp-append-version="true" src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <script asp-append-version="true" src="~/lib/datatable/dist/datatables.js"></script>
@@ -174,7 +170,7 @@
     <script asp-append-version="true" src="~/js/setting_calendar.js"></script>
     <script asp-append-version="true" src="~/js/setting_datatableselect.js"></script>
 
-    @* <script asp-append-version="true" src="~/js/startapplicarion.js"></script> *@
+    <script asp-append-version="true" src="~/js/startapplicarion.js"></script>
     @await RenderSectionAsync("Scripts", required: false)
 </body>
 </html>

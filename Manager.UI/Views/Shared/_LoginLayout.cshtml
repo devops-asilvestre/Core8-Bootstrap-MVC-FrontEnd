@@ -1,0 +1,26 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - Manager.UI</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/lib/datatable/dist/datatables.css" />
+    <link rel="stylesheet" href="~/lib/plugins/bootstrap-daterangepicker/daterangepicker.css" />
+    <link rel="stylesheet" href="~/lib/plugins/bootstrap-datepicker/dist/css/bootstrap-datepicker.css" />
+    <link rel="stylesheet" href="~/lib/plugins/bootstrap-daterangepicker/daterangepicker.css" />
+    <link rel="stylesheet" href="~/lib/plugins/bootstrap-datetime-picker/css/bootstrap-datetimepicker.min.css" />
+
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/Manager.UI.styles.css" asp-append-version="true" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+@* <body class="body bg-gradient-silver-black">  *@
+<body class="body vertical-layout vertical-menu 1-column  bg-full-screen-image menu-expanded blank-page blank-page" data-open="click" data-menu="vertical-menu" data-col="1-column">
+
+    <div id="content" class="app-content-container">
+        @RenderBody()
+    </div>
+
+</body>
+</html>
